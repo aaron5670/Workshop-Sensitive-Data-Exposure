@@ -49,5 +49,5 @@ Deze workshop laat zien hoe je veilig gebruikerswachtwoorden kan opslaan in een 
 4. Voor extra security kan je eventueel workFactor van **BCrypt.Net.BCrypt.HashPassword(password, 11)** verhogen.
 
 ### Extra informatie
-- Extra informatie over BCrypt en de BCrypt NuGet die wordt gebruikt in deze workshop: [BCrypt.net](https://github.com/BcryptNet/bcrypt.net)
-- Extra informatie over **A3 2017 - Sensitive Data Exposure** [Link](https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure)
+- Extra informatie over **BCrypt** en de **BCrypt.Net-Next NuGet** die wordt gebruikt in deze workshop: [BCrypt.net](https://github.com/BcryptNet/bcrypt.net)
+- Extra informatie over **A3 2017 - Sensitive Data Exposure**: [Link](https://owasp.org/www-project-top-ten/2017/A3_2017-Sensitive_Data_Exposure)
