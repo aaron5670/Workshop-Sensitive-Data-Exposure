@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace WebshopDemo
+﻿namespace WebshopDemo
 {
     public class Customer
     {
