@@ -12,7 +12,7 @@ namespace WebshopDemo
 
             var customer = store.GetCustomerByUsername("john23");
 
-            // password is stored unencrypted
+            // password is stored unencrypted (UNSAFE)
             Console.WriteLine($"Password of {customer.username} is {customer.password}");
 
             var isAuthenticated = store.Authenticate("john23", "welkom01");
