@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WebshopDemo": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\aaron\\RiderProjects\\Workshop-Sensitive-Data-Exposure\\WebshopDemo"
+    }
+  }
+}
