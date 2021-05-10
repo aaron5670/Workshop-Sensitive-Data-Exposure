@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace WebshopDemo
 {
@@ -6,19 +7,21 @@ namespace WebshopDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-
             using var context = new MyContext();
-            var customer = new Customer
+            context.Customers.Add(new Customer
             {
-                CustomerId = 1,
-                FirstName = "Elizabeth",
-                LastName = "Lincoln",
-                Address = "23 Tsawassen Blvd."
-            };
-
-            context.Customers.Add(customer);
+                username = "john23",
+                password = "welkom01",
+                firstName = "John",
+                lastName = "Doe",
+                address = "Straatnaam 3",
+            });
             context.SaveChanges();
+
+            var customer1 = context.Customers.Single(c => c.customerId == 1);
+
+            //password is stored unencrypted
+            Console.WriteLine(customer1.password);
         }
     }
 }

@@ -1,0 +1,7 @@
+﻿.gitignore
+.vs
+WebshopDemo/bin
+WebshopDemo/Migrations
+WebshopDemo/obj
+WebshopDemo/CustomerDB.db
+WebshopDemo/Properties
