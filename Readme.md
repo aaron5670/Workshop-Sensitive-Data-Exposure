@@ -23,4 +23,27 @@ Om de workshop eenvoudig te houden is er gebruik gemaakt van Entity Framework Co
 Deze workshop laat zien hoe je veilig gebruikerswachtwoorden kan opslaan in een database.
 
 1. Installeer de volgende NuGet: **BCrypt.Net-Next** ([Link](https://www.nuget.org/packages/BCrypt.Net-Next/)).
-2. Todo...
+2. Vervang de code in de **AddCustomer** methode met het volgende:
+   ````c#
+   // Hash password
+   // Default workFactor is 11 (2,048 iterations)
+   var passwordHash = BCrypt.Net.BCrypt.HashPassword(password, 11);
+   
+   context.Customers.Add(new Customer
+   {
+       username = username,
+       password = passwordHash,
+       firstName = firstName,
+       lastName = lastName,
+       address = address
+   });
+   ````
+3. vervang het if-statement in de methode **Authenticate** met het volgende:
+````c#
+ if (account == null || !BCrypt.Net.BCrypt.Verify(password, account.password))
+ {
+     // authentication failed
+     return false;
+ }
+````
+4. Done!

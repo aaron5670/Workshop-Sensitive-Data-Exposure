@@ -24,10 +24,15 @@ namespace WebshopDemo
             public void AddCustomer(string username, string password, string firstName, string lastName, string address)
             {
                 using var context = new MyContext();
+                
+                // Hash password
+                // Default workFactor is 11 (2,048 iterations)
+                var passwordHash = BCrypt.Net.BCrypt.HashPassword(password, 11);
+
                 context.Customers.Add(new Customer
                 {
                     username = username,
-                    password = password,
+                    password = passwordHash,
                     firstName = firstName,
                     lastName = lastName,
                     address = address
@@ -51,7 +56,7 @@ namespace WebshopDemo
                 // get account from database
                 var account = context.Customers.SingleOrDefault(customer => customer.username == username);
 
-                if (account == null || account.password != password)
+                if (account == null || !BCrypt.Net.BCrypt.Verify(password, account.password))
                 {
                     // authentication failed
                     return false;
